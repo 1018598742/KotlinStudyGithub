@@ -16,6 +16,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.bennyhuo.github.R
 import com.bennyhuo.github.Settings
+import com.bennyhuo.github.data.LoginDataSource
+import com.bennyhuo.github.data.LoginRepository
 
 
 class LoginActivity : AppCompatActivity() {
@@ -37,6 +39,7 @@ class LoginActivity : AppCompatActivity() {
 
         loginViewModel = ViewModelProviders.of(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
+
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
