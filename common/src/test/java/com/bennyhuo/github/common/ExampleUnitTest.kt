@@ -1,5 +1,8 @@
 package com.bennyhuo.github.common
 
+import com.bennyhuo.github.common.ext.no
+import com.bennyhuo.github.common.ext.otherwise
+import com.bennyhuo.github.common.ext.yes
 import org.junit.Test
 
 import org.junit.Assert.*

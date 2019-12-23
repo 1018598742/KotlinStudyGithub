@@ -1,5 +1,6 @@
 package com.bennyhuo.github.common
 
+import com.bennyhuo.github.common.unused.AbsProperties
 import org.junit.Test
 
 class InfoProps: AbsProperties("info.properties"){

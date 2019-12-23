@@ -34,5 +34,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+
     implementation project(':mvp')
+    implementation project(':common')
+
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    implementation "org.jetbrains.anko:anko:$anko_version"
+
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
+
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
 }
