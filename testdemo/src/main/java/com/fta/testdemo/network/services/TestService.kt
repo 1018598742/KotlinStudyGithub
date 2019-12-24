@@ -3,10 +3,7 @@ package com.fta.testdemo.network.services
 import com.fta.testdemo.network.retrofit
 import com.mdm.online.model.bean.SzgaAllocateCheckBean
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 import rx.Observable
 
 interface TestApi {
@@ -20,7 +17,7 @@ interface TestApi {
 
     @POST("/sync/msgBack/test/data")
     @FormUrlEncoded
-    fun testData(@Field("name") name: String, @Field("age") age: Int): Observable<Result<Any>>
+    fun testData(@FieldMap map: Map<String, String>): Observable<Result<Any>>
 
 }
 

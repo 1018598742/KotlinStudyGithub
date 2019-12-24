@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bennyhuo.mvp.impl.BaseFragment
-import com.fta.testdemo.presenter.MyPresenter
 import com.fta.testdemo.R
 import com.fta.testdemo.network.entities.Person
 import com.fta.testdemo.network.services.TestService
-import com.mdm.online.model.bean.SzgaAllocateCheckBean
+import com.fta.testdemo.presenter.MyPresenter
+import com.fta.testdemo.utils.toStringMap
 import kotlinx.android.synthetic.main.fragment_demo.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MyFragment : BaseFragment<MyPresenter>() {
 
@@ -33,14 +30,14 @@ class MyFragment : BaseFragment<MyPresenter>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         aboutLogin.setOnClickListener {
-//            TestService.deviceCheck(SzgaAllocateCheckBean())
+            //            TestService.deviceCheck(SzgaAllocateCheckBean())
 //                .subscribe({
 //                    Log.i(TAG, "MyFragment-onViewCreated: result=${it}");
 //                }, {
 //                    Log.e(TAG, "MyFragment-onViewCreated: error=${it.printStackTrace()}");
 //                })
 
-            TestService.testData("bob",20)
+            TestService.testData(toStringMap(Person()))
                 .subscribe({
                     Log.i(TAG, "MyFragment-onViewCreated: person resulet=${it}");
                 }, {
