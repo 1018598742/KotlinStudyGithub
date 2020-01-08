@@ -15,6 +15,9 @@ noArg {
 }
 
 android {
+
+    kotlinOptions { jvmTarget = 1.8}
+
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -86,6 +89,12 @@ dependencies {
 框架中使用了修改自 https://github.com/Pixplicity/HtmlCompat 的 Html 解析器
  */
     implementation 'com.zzhoujay.richtext:richtext:3.0.8'
+
+    def nav_version = "2.1.0"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
 
 
 }
