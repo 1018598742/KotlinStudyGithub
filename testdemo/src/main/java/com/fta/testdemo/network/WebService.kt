@@ -3,14 +3,14 @@ package com.fta.testdemo.network
 import com.bennyhuo.github.common.ext.ensureDir
 import com.fta.testdemo.AppContext
 import com.fta.testdemo.utils.SSLSocketFactoryUtils
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory2
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory2
 import retrofit2.converter.gson.GsonConverterFactory
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -25,7 +25,7 @@ val retrofit by lazy {
     Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(
-            RxJavaCallAdapterFactory2.createWithSchedulers(
+            RxJava2CallAdapterFactory2.createWithSchedulers(
                 Schedulers.io(),
                 AndroidSchedulers.mainThread()
             )

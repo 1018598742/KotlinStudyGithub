@@ -2,9 +2,12 @@ package com.fta.testdemo.network.services
 
 import com.fta.testdemo.network.retrofit
 import com.mdm.online.model.bean.SzgaAllocateCheckBean
+import io.reactivex.Observable
 import retrofit2.Call
-import retrofit2.http.*
-import rx.Observable
+import retrofit2.http.Body
+import retrofit2.http.FieldMap
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
 
 interface TestApi {
 

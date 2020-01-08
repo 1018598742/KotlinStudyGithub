@@ -2,6 +2,7 @@ package com.bennyhuo.github.view
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
@@ -75,6 +76,13 @@ class LoginActivity : BaseActivity<LoginPresenter>() {
     fun onLoginSuccess() {
         toast("登录成功")
         showProgress(false)
+        startActivity(
+            Intent(
+                this,
+                MainActivity::class.java
+            ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        )
+        finish()
     }
 
     fun onDataInit(name: String, passwd: String) {

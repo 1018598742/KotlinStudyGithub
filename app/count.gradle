@@ -1,0 +1,17 @@
+def localPropertiesFile = new File(rootDir, "count.properties")
+def properties = new Properties()
+properties.load(new FileInputStream(localPropertiesFile))
+def currentTime = new Date().format("yyyy-MM-dd")
+def recorderTime = properties.getProperty("time", currentTime)
+def countStr = properties.getProperty("count", "1")
+def count = Integer.parseInt(countStr)
+if (currentTime.equalsIgnoreCase(recorderTime)) {
+    count++
+}else {
+    count = 1
+}
+println("count=" + count)
+def fileOutputStream = new FileOutputStream(localPropertiesFile)
+properties.setProperty("time",currentTime)
+properties.setProperty("count",String.valueOf(count))
+properties.store(fileOutputStream,properties.toString())

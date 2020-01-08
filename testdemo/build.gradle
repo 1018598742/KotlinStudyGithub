@@ -12,6 +12,7 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -21,6 +22,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
     }
 
 }
@@ -42,14 +47,40 @@ dependencies {
 
     implementation 'pub.devrel:easypermissions:3.0.0'
 
-    implementation "org.jetbrains.anko:anko:$anko_version"
+//    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
 
-    implementation 'io.reactivex:rxandroid:1.2.1'
-    implementation 'io.reactivex:rxjava:1.1.6'
+//    implementation 'io.reactivex:rxandroid:1.2.1'
+//    implementation 'io.reactivex:rxjava:1.1.6'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+//    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    implementation "com.squareup.okhttp3:okhttp:4.2.1"
+
+    // if u use AndroidX, use the following
+    implementation 'com.blankj:utilcodex:1.26.0'
+
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+
+//    implementation 'com.liulishuo.filedownloader:library:1.7.7'
+    def okdonwload_version = '1.0.7'
+    // core
+    implementation "com.liulishuo.okdownload:okdownload:$okdonwload_version"
+// provide sqlite to store breakpoints
+    implementation "com.liulishuo.okdownload:sqlite:$okdonwload_version"
+// provide okhttp to connect to backend
+// and then please import okhttp dependencies by yourself
+    implementation "com.liulishuo.okdownload:okhttp:$okdonwload_version"
+// provide interface to match filedownloader
+    implementation "com.liulishuo.okdownload:filedownloader:$okdonwload_version"
+// provide interface for kotlin extension
+    implementation "com.liulishuo.okdownload:ktx:$okdonwload_version"
 
 }

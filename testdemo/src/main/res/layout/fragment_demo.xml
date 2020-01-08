@@ -5,6 +5,12 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/downloadAc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转下载" />
+
+    <Button
         android:id="@+id/aboutLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,5 +23,40 @@
         android:text="hello fragment"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/aboutDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试下载接口" />
+
+    <Button
+        android:id="@+id/okhttpDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="okhttp测试下载" />
+
+    <Button
+        android:id="@+id/httpConDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="origianl测试下载" />
+
+    <Button
+        android:id="@+id/readFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="读取文件" />
+
+    <Button
+        android:id="@+id/aboutThirdDownload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试第三方下载" />
+
+    <Button
+        android:id="@+id/uninstallSelf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="卸载自己" />
 
 </LinearLayout>

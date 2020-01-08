@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.fta.testdemo.view.MyFragment
 import pub.devrel.easypermissions.EasyPermissions
 
-class MainActivity : AppCompatActivity(),EasyPermissions.PermissionCallbacks {
+class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +16,8 @@ class MainActivity : AppCompatActivity(),EasyPermissions.PermissionCallbacks {
             this,
             "需要权限",
             0,
-            Manifest.permission.READ_PHONE_STATE
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
         )
 
     }
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity(),EasyPermissions.PermissionCallbacks {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        EasyPermissions.onRequestPermissionsResult(requestCode,permissions,grantResults,this)
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
@@ -35,8 +36,10 @@ class MainActivity : AppCompatActivity(),EasyPermissions.PermissionCallbacks {
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-        supportFragmentManager.beginTransaction().add(R.id.container,
-            MyFragment(), "MyFragment")
+        supportFragmentManager.beginTransaction().add(
+            R.id.container,
+            MyFragment(), "MyFragment"
+        )
             .commitAllowingStateLoss()
     }
 }

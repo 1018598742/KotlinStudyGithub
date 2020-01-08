@@ -2,7 +2,7 @@ package com.fta.testdemo
 
 import com.fta.testdemo.Bean.User
 import com.fta.testdemo.network.entities.Person
-import com.fta.testdemo.utils.ReflectUtils
+//import com.fta.testdemo.utils.ReflectUtils
 import org.junit.Test
 
 class TestReflect {
@@ -16,7 +16,7 @@ class TestReflect {
         user.longAge = 20
         user.integerAge = 22
 
-        val toMap = ReflectUtils.toMap(person)
-        println(toMap)
+//        val toMap = ReflectUtils.toMap(person)
+//        println(toMap)
     }
 }

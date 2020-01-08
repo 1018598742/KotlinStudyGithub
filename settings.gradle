@@ -1,2 +1,2 @@
-include ':app', ':common', ':mvp', ':testdemo'
+include ':app', ':common', ':mvp', ':testdemo', ':anko-androidx'
 rootProject.name='GitHub'

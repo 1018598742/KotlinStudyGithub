@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-noarg'
 
+apply from: "./count.gradle"
+
 apply from: "./local.gradle"
 
 noArg {
@@ -22,6 +24,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // https://chris.banes.me/2016/02/25/appcompat-vector/#enabling-the-flag
+        // 如果需要使用兼容库对svg的支持，就需要这样配置
+        vectorDrawables.useSupportLibrary = true
+
+
     }
     buildTypes {
         debug {
@@ -56,7 +64,12 @@ dependencies {
     implementation project(':common')
     implementation project(':mvp')
 
-    implementation "org.jetbrains.anko:anko:$anko_version"
+//    implementation "org.jetbrains.anko:anko:$anko_version"
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk15:$anko_version"
+    implementation "org.jetbrains.anko:anko-sdk15-listeners:$anko_version"
+    implementation project(":anko-androidx")
 
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'io.reactivex:rxjava:1.1.6'
@@ -65,6 +78,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    implementation "com.android.support:support-fragment:$support_version"
+
+    /* 源码地址：https://github.com/enbandari/RichText；这个项目是从 https://github.com/zzhoujay/RichText 修改而来的
+<p>原因：原框架使用了  Android 系统的 Html 解析器，对 pre 和 code 没有支持
+框架中使用了修改自 https://github.com/Pixplicity/HtmlCompat 的 Html 解析器
+ */
+    implementation 'com.zzhoujay.richtext:richtext:3.0.8'
 
 
 }
