@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_about">
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.bennyhuo.github.view.fragment.AboutFragment"
+        android:label="关于"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.bennyhuo.github.view.fragment.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.bennyhuo.github.view.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.bennyhuo.github.view.fragment.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" />
+
+</navigation>

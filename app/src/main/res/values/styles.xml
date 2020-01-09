@@ -1,5 +1,14 @@
 <resources>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -7,22 +16,22 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="android:textColorSecondary">@color/textColorSecondary</item>
-        <item name="android:textColorTertiary">@color/textColorTertiary</item>
+<!--        <item name="android:textColorPrimary">@color/textColorPrimary</item>-->
+<!--        <item name="android:textColorSecondary">@color/textColorSecondary</item>-->
+<!--        <item name="android:textColorTertiary">@color/textColorTertiary</item>-->
 
-        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
-        <item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>
-        <item name="android:textColorTertiaryInverse">@color/textColorTertiaryInverse</item>
+<!--        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>-->
+<!--        <item name="android:textColorSecondaryInverse">@color/textColorSecondaryInverse</item>-->
+<!--        <item name="android:textColorTertiaryInverse">@color/textColorTertiaryInverse</item>-->
 
-        <item name="android:colorBackground">@color/colorBackground</item>
-        <item name="android:windowBackground">@color/windowBackground</item>
+<!--        <item name="android:colorBackground">@color/colorBackground</item>-->
+<!--        <item name="android:windowBackground">@color/windowBackground</item>-->
 
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
 
-<!--        <item name="sideBarBackground">@drawable/side_nav_bar</item>-->
-        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>
+<!--&lt;!&ndash;        <item name="sideBarBackground">@drawable/side_nav_bar</item>&ndash;&gt;-->
+<!--        <item name="android:alertDialogTheme">@style/AlertDialogTheme</item>-->
     </style>
 
     <style name="AppTheme.Translucent">

@@ -2,11 +2,12 @@ package com.bennyhuo.github
 
 import android.app.Application
 import android.content.ContextWrapper
+import androidx.multidex.MultiDexApplication
 import com.facebook.stetho.Stetho
 
 private lateinit var INSTANCE: Application
 
-class App : Application() {
+class App : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
